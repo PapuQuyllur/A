@@ -1,0 +1,145 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 2025-12-18 03:09:27
+Description: Exception in server tick loop
+
+java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 0
+	at java.util.ArrayList.add(ArrayList.java:455) ~[?:?] {re:mixin}
+	at java.util.ArrayList.add(ArrayList.java:467) ~[?:?] {re:mixin}
+	at com.tiviacz.travelersbackpack.config.TravelersBackpackConfig$Server.loadEntityTypesFromConfig(TravelersBackpackConfig.java:566) ~[travelersbackpack-forge-1.20.1-9.1.46.jar%23187!/:forge-1.20.1-9.1.46] {re:classloading}
+	at com.tiviacz.travelersbackpack.config.TravelersBackpackConfig$Server.initializeLists(TravelersBackpackConfig.java:648) ~[travelersbackpack-forge-1.20.1-9.1.46.jar%23187!/:forge-1.20.1-9.1.46] {re:classloading}
+	at com.tiviacz.travelersbackpack.handlers.ModEventHandler.onModConfigLoad(ModEventHandler.java:28) ~[travelersbackpack-forge-1.20.1-9.1.46.jar%23187!/:forge-1.20.1-9.1.46] {re:classloading}
+	at com.tiviacz.travelersbackpack.handlers.__ModEventHandler_onModConfigLoad_Loading.invoke(.dynamic) ~[travelersbackpack-forge-1.20.1-9.1.46.jar%23187!/:forge-1.20.1-9.1.46] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%2352!/:?] {}
+	at net.minecraftforge.fml.javafmlmod.FMLModContainer.lambda$new$0(FMLModContainer.java:46) ~[javafmllanguage-1.20.1-47.4.13.jar%23193!/:?] {}
+	at net.minecraftforge.fml.ModContainer.lambda$dispatchConfigEvent$9(ModContainer.java:172) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?] {re:mixin}
+	at net.minecraftforge.fml.ModContainer.dispatchConfigEvent(ModContainer.java:172) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at net.minecraftforge.fml.config.ModConfig.fireEvent(ModConfig.java:77) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at net.minecraftforge.fml.config.ConfigTracker.openConfig(ConfigTracker.java:62) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at net.minecraftforge.fml.config.ConfigTracker.lambda$loadConfigs$1(ConfigTracker.java:50) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at java.lang.Iterable.forEach(Iterable.java:75) ~[?:?] {re:mixin}
+	at java.util.Collections$SynchronizedCollection.forEach(Collections.java:2132) ~[?:?] {}
+	at net.minecraftforge.fml.config.ConfigTracker.loadConfigs(ConfigTracker.java:50) ~[fmlcore-1.20.1-47.4.13.jar%23192!/:?] {}
+	at net.minecraftforge.server.ServerLifecycleHooks.handleServerAboutToStart(ServerLifecycleHooks.java:96) ~[forge-1.20.1-47.4.13-universal.jar%23196!/:?] {re:classloading}
+	at net.minecraft.server.dedicated.DedicatedServer.m_7038_(DedicatedServer.java:162) ~[server-1.20.1-20230612.114412-srg.jar%23191!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:A}
+	at net.minecraft.server.MinecraftServer.m_130011_(MinecraftServer.java:634) ~[server-1.20.1-20230612.114412-srg.jar%23191!/:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.m_206580_(MinecraftServer.java:251) ~[server-1.20.1-20230612.114412-srg.jar%23191!/:?] {re:classloading,pl:accesstransformer:B,re:mixin,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.8.0-1030-azure
+	Java Version: 17.0.17, Ubuntu
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Ubuntu
+	Memory: 1587023680 bytes (1513 MiB) / 2147483648 bytes (2048 MiB) up to 12884901888 bytes (12288 MiB)
+	CPUs: 4
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD EPYC 7763 64-Core Processor
+	Identifier: AuthenticAMD Family 25 Model 1 Stepping 1
+	Microarchitecture: Zen 3
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 2
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 7997.99
+	Virtual memory used (MB): 4600.89
+	Swap memory total (MB): 0.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 2 total; -Xms2G -Xmx12G
+	Server Running: true
+	Player Count: 0 / 20; []
+	Data Packs: vanilla, mod:mowziesmobs, mod:puzzlesapi, mod:mutantmonsters, mod:geckolib, mod:aether, mod:jei, mod:hammerlib, mod:clumps (incompatible), mod:journeymap (incompatible), mod:organics, mod:travelersbackpack, mod:strawstatues, mod:mixinextras (incompatible), mod:carryon (incompatible), mod:puzzlesaccessapi, mod:forge, mod:embeddium, mod:structure_gel, mod:infernalmobs (incompatible), mod:dungeons_and_combat, mod:distanthorizons (incompatible), mod:vanillaplustools (incompatible), mod:block_factorys_bosses, mod:mousetweaks, mod:toolbelt (incompatible), mod:jade (incompatible), mod:dungeons_plus, mod:spectrelib (incompatible), mod:improvableskills, mod:curios (incompatible), mod:spartanshields, mod:polymorph (incompatible), mod:storagedrawers (incompatible), mod:immersive_paintings (incompatible), mod:mr_dungeons_andtaverns (incompatible), mod:elevatorid, mod:tombstone, mod:immersiveores, mod:cumulus_menus, mod:architectury (incompatible), mod:skin_changer, mod:jamlib, mod:rightclickharvest, mod:appleskin (incompatible), mod:aiimprovements, mod:puzzleslib, mod:nitrogen_internals, mod:dontcuttripwire, mod:overloadedarmorbar (incompatible), mod:dynamictrees (incompatible), mod:randomenchants2 (incompatible), mod:xpbook, builtin/aether_accessories, mutantmonsters:biome_modifications
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	Is Modded: Definitely; Server brand changed to 'forge'
+	Type: Dedicated Server (map_server.txt)
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeserver
+	ModLauncher naming: srg
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.4.13.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		mowziesmobs-1.7.3.jar                             |Mowzie's Mobs                 |mowziesmobs                   |1.7.3               |DONE      |Manifest: NOSIGNATURE
+		puzzlesapi-forge-8.1.4.jar                        |Puzzles Api                   |puzzlesapi                    |8.1.4               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		MutantMonsters-v8.0.7-1.20.1-Forge.jar            |Mutant Monsters               |mutantmonsters                |8.0.7               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		geckolib-forge-1.20.1-4.8.2.jar                   |GeckoLib 4                    |geckolib                      |4.8.2               |DONE      |Manifest: NOSIGNATURE
+		aether-1.20.1-1.5.2-neoforge.jar                  |The Aether                    |aether                        |1.20.1-1.5.2-neoforg|DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.20.0.127.jar                  |Just Enough Items             |jei                           |15.20.0.127         |DONE      |Manifest: NOSIGNATURE
+		HammerLib-1.20.1-20.1.50.jar                      |HammerLib                     |hammerlib                     |20.1.50             |DONE      |Manifest: 97:e8:52:e9:b3:f0:1b:83:57:4e:83:15:f7:e7:76:51:c6:60:5f:2b:45:59:19:a7:31:9e:98:69:56:4f:01:3c
+		Clumps-forge-1.20.1-12.0.0.4.jar                  |Clumps                        |clumps                        |12.0.0.4            |DONE      |Manifest: NOSIGNATURE
+		journeymap-1.20.1-5.10.3-forge.jar                |Journeymap                    |journeymap                    |5.10.3              |DONE      |Manifest: NOSIGNATURE
+		Organics-1.20.1-0.1.9.jar                         |Organics                      |organics                      |0.1.3               |DONE      |Manifest: NOSIGNATURE
+		travelersbackpack-forge-1.20.1-9.1.46.jar         |Traveler's Backpack           |travelersbackpack             |9.1.46              |DONE      |Manifest: NOSIGNATURE
+		StrawStatues-v8.0.3-1.20.1-Forge.jar              |Straw Statues                 |strawstatues                  |8.0.3               |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		mixinextras-forge-0.4.1.jar                       |MixinExtras                   |mixinextras                   |0.4.1               |DONE      |Manifest: NOSIGNATURE
+		carryon-forge-1.20.1-2.1.2.7.jar                  |Carry On                      |carryon                       |2.1.2.7             |DONE      |Manifest: NOSIGNATURE
+		puzzlesaccessapi-forge-20.1.1.jar                 |Puzzles Access Api            |puzzlesaccessapi              |20.1.1              |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.4.13-universal.jar                |Forge                         |forge                         |47.4.13             |DONE      |Manifest: NOSIGNATURE
+		embeddium-0.3.21+mc1.20.1.jar                     |Embeddium                     |embeddium                     |0.3.21+mc1.20.1     |DONE      |Manifest: NOSIGNATURE
+		structure_gel-1.20.1-2.16.2.jar                   |Structure Gel API             |structure_gel                 |2.16.2              |DONE      |Manifest: NOSIGNATURE
+		infernalmobs-1.20.1.10.jar                        |Infernal Mobs                 |infernalmobs                  |1.20.1.10           |DONE      |Manifest: NOSIGNATURE
+		server-1.20.1-20230612.114412-srg.jar             |Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		dungeons_and_combat-1.2.4-forge-1.20.1.jar        |dungeons and combat           |dungeons_and_combat           |1.2.4               |DONE      |Manifest: NOSIGNATURE
+		DistantHorizons-2.4.0-b-1.20.1-fabric-forge.jar   |Distant Horizons              |distanthorizons               |2.4.0-b             |DONE      |Manifest: NOSIGNATURE
+		vanillaplustools-1.20-1.0.4.jar                   |Vanilla+ Tools                |vanillaplustools              |1.20-1.0.4          |DONE      |Manifest: NOSIGNATURE
+		bossesrise-1.20.1-forge-1.0.9.2b.jar              |Bosses'Rises                  |block_factorys_bosses         |1.0.9.2.            |DONE      |Manifest: NOSIGNATURE
+		MouseTweaks-forge-mc1.20.1-2.25.1.jar             |Mouse Tweaks                  |mousetweaks                   |2.25.1              |DONE      |Manifest: NOSIGNATURE
+		ToolBelt-1.20.1-1.20.02.jar                       |Tool Belt                     |toolbelt                      |1.20.02             |DONE      |Manifest: NOSIGNATURE
+		Jade-1.20.1-Forge-11.12.3.jar                     |Jade                          |jade                          |11.12.3+forge       |DONE      |Manifest: NOSIGNATURE
+		dungeons_plus-1.20.1-1.5.0.jar                    |Dungeons Plus                 |dungeons_plus                 |1.5.0               |DONE      |Manifest: NOSIGNATURE
+		spectrelib-forge-0.13.17+1.20.1.jar               |SpectreLib                    |spectrelib                    |0.13.17+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		ImprovableSkills-1.20.1-20.1.13.jar               |Improvable Skills             |improvableskills              |20.1.13             |DONE      |Manifest: 97:e8:52:e9:b3:f0:1b:83:57:4e:83:15:f7:e7:76:51:c6:60:5f:2b:45:59:19:a7:31:9e:98:69:56:4f:01:3c
+		curios-forge-5.14.1+1.20.1.jar                    |Curios API                    |curios                        |5.14.1+1.20.1       |DONE      |Manifest: NOSIGNATURE
+		SpartanShields-1.20.1-forge-3.1.1.jar             |Spartan Shields               |spartanshields                |3.1.1               |DONE      |Manifest: NOSIGNATURE
+		polymorph-forge-0.49.10+1.20.1.jar                |Polymorph                     |polymorph                     |0.49.10+1.20.1      |DONE      |Manifest: NOSIGNATURE
+		StorageDrawers-forge-1.20.1-12.14.3.jar           |Storage Drawers               |storagedrawers                |12.14.3             |DONE      |Manifest: NOSIGNATURE
+		immersive_paintings-0.6.8+1.20.1-forge.jar        |Immersive Paintings           |immersive_paintings           |0.6.8+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		dungeons-and-taverns-3.0.3.f[Forge].jar           |Dungeons and Taverns          |mr_dungeons_andtaverns        |3.0.3.f             |DONE      |Manifest: NOSIGNATURE
+		elevatorid-1.20.1-1.9.1-forge.jar                 |Elevator Mod                  |elevatorid                    |1.20.1-1.9.1-forge  |DONE      |Manifest: NOSIGNATURE
+		tombstone-1.20.1-9.0.9.jar                        |Corail Tombstone              |tombstone                     |9.0.9               |DONE      |Manifest: NOSIGNATURE
+		immersiveores-1.20.1-0.9.jar                      |ImmersiveOres                 |immersiveores                 |1.20.1-0.9          |DONE      |Manifest: NOSIGNATURE
+		cumulus_menus-1.20.1-1.0.1-neoforge.jar           |Cumulus                       |cumulus_menus                 |1.20.1-1.0.1-neoforg|DONE      |Manifest: NOSIGNATURE
+		architectury-9.2.14-forge.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		skin_changer-forge-1.20.1-0.6.6.jar               |Skin Changer                  |skin_changer                  |0.6.6               |DONE      |Manifest: NOSIGNATURE
+		jamlib-forge-1.3.5+1.20.1.jar                     |JamLib                        |jamlib                        |1.3.5+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		rightclickharvest-forge-4.6.0+1.20.1.jar          |Right Click Harvest           |rightclickharvest             |4.6.0+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		appleskin-forge-mc1.20.1-2.5.1.jar                |AppleSkin                     |appleskin                     |2.5.1+mc1.20.1      |DONE      |Manifest: NOSIGNATURE
+		AI-Improvements-1.20-0.5.2.jar                    |AI-Improvements               |aiimprovements                |0.5.2               |DONE      |Manifest: NOSIGNATURE
+		PuzzlesLib-v8.1.33-1.20.1-Forge.jar               |Puzzles Lib                   |puzzleslib                    |8.1.33              |DONE      |Manifest: 9a:09:85:98:65:c4:8c:11:c5:49:f6:d6:33:23:39:df:8d:b4:ff:92:84:b8:bd:a5:83:9f:ac:7f:2a:d1:4b:6a
+		nitrogen_internals-1.20.1-1.0.12-neoforge.jar     |Nitrogen                      |nitrogen_internals            |1.20.1-1.0.12-neofor|DONE      |Manifest: NOSIGNATURE
+		dontcuttripwire-1.20.1-0.2.0.jar                  |DontCutTripwire               |dontcuttripwire               |0.0.2               |DONE      |Manifest: NOSIGNATURE
+		overloadedarmorbar-1.20.1-1.jar                   |Overloaded Armor Bar          |overloadedarmorbar            |1.20.1-1            |DONE      |Manifest: NOSIGNATURE
+		DynamicTrees-1.20.1-1.4.8.jar                     |Dynamic Trees                 |dynamictrees                  |1.20.1-1.4.8        |DONE      |Manifest: NOSIGNATURE
+		randomenchants2[7.1.2]1.20.1.jar.jar              |Random Enchants 2             |randomenchants2               |7.1.1               |DONE      |Manifest: NOSIGNATURE
+		xptome-1.20.1-2.2.1.jar                           |XP Tome                       |xpbook                        |2.2.1               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 78775443-a534-450a-b9ba-243011c0113b
+	FML: 47.4
+	Forge: net.minecraftforge:47.4.13
